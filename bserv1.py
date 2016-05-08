@@ -3,9 +3,9 @@ import os
 s= socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind(('0.0.0.0', 2222))
 s.listen(10)
+for i in range(10):
+  npid = os.fork()
 while True:
-  for i in range(10):
-    npid = os.fork()
   conn, addr = s.accept()
   while True:
     data = conn.recv(1024)
