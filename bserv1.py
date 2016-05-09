@@ -5,9 +5,9 @@ s.bind(('0.0.0.0', 2222))
 s.listen(10)
 for i in range(10):
   pid = os.fork()
-if pid==0:
-  while True:
-    conn, addr = s.accept()
-    data = conn.recv(1024)
-    conn.send(data)
-  conn.close()
+  if pid==0:
+    while True:
+      conn, addr = s.accept()
+      data = conn.recv(1024)
+      conn.send(data)
+    conn.close()
