@@ -10,4 +10,5 @@ if pid==0:
     conn, addr = s.accept()
     data = conn.recv(1024)
     conn.send(data)
-    conn.close()
+    if not data: break
+  conn.close()
