@@ -8,9 +8,6 @@ for i in range(10):
 if pid==0:
   while True:
     conn, addr = s.accept()
-    while True:
-      data = conn.recv(1024)
-      if not data: break
-      if data == b'close()': break
-      conn.send(data)
+    data = conn.recv(1024)
+    conn.send(data)
     conn.close()
