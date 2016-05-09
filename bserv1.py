@@ -10,4 +10,4 @@ for i in range(10):
       conn, addr = s.accept()
       data = conn.recv(1024)
       conn.send(data)
-    conn.close()
+      conn.close()
