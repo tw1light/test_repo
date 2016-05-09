@@ -9,6 +9,5 @@ if pid==0:
   while True:
     conn, addr = s.accept()
     data = conn.recv(1024)
-    if data == b'close': break
     conn.send(data)
   conn.close()
